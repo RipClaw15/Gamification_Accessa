@@ -1,0 +1,73 @@
+﻿@page
+@model WebApplication1.Pages.Users.ProfileModel
+@{
+}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>@Model.userInfo.name</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.userInfo.email</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>@Model.userInfo.password</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>@Model.userInfo.phone</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>@Model.userInfo.address</td>
+        </tr>
+        <tr>
+            <th>Position</th>
+            <td>@Model.userInfo.position</td>
+        </tr>
+        <tr>
+            <th>Units this Month</th>
+            <td>@Model.userInfo.units_this_month</td>
+        </tr>
+        <tr>
+            <th>Units last Month</th>
+            <td>@Model.userInfo.units_last_month</td>
+        </tr>
+        <tr>
+            <th>Platinum</th>
+            <td>@Model.userInfo.platinum</td>
+        </tr>
+        <tr>
+            <th>Diamond</th>
+            <td>@Model.userInfo.diamond</td>
+        </tr>
+        <tr>
+            <th>Gold</th>
+            <td>@Model.userInfo.gold</td>
+        </tr>
+        <tr>
+            <th>Silver</th>
+            <td>@Model.userInfo.silver</td>
+        </tr>
+        <tr>
+            <th>Won a Badge in the last 3 months?</th>
+            <td>@Model.userInfo.badge_in_last_quarter</td>
+        </tr>
+        <tr>
+            <th>Consecutive months with a 1000 units</th>
+            <td>@Model.userInfo.cons_units</td>
+        </tr>
+        <tr>
+            <th>1000 units a month last year</th>
+            <td>@Model.userInfo.units_year</td>
+        </tr>
+        <tr>
+            <th>Leader</th>
+            <td>@Model.userInfo.leader</td>
+        </tr>
+    </tbody>
+</table>

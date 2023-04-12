@@ -1,0 +1,136 @@
+﻿@page
+@model WebApplication1.Pages.Users.EditModel
+@{
+}
+
+<br>
+<h2>Edit User</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                <strong>@Model.errorMessage</strong>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.userInfo.id">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.userInfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="email" value="@Model.userInfo.email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="password" value="@Model.userInfo.password">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone Nr.</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.userInfo.phone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="address" value="@Model.userInfo.address">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Position</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="position" value="@Model.userInfo.position">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Units this Month</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="units_this_month" value="@Model.userInfo.units_this_month">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Units last Month</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="units_last_month" value="@Model.userInfo.units_last_month">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Platinum</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="platinum" value="@Model.userInfo.platinum">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Diamond</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="diamond" value="@Model.userInfo.diamond">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Gold</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="gold" value="@Model.userInfo.gold">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Silver</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="silver" value="@Model.userInfo.silver">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Won a Badge in the last 3 months?</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="badge_in_last_quarter" value="@Model.userInfo.badge_in_last_quarter">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Consecutive months with a 1000 units</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="cons_units" value="@Model.userInfo.cons_units">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">1000 units a month last year</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="units_year" value="@Model.userInfo.units_year">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Leader</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="leader" value="@Model.userInfo.leader">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+            <div class="row mb-3">
+                    <div class="col-sm-9">
+                        <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                            <strong>@Model.successMessage</strong>
+                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                        </div>
+                    </div>
+             </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm=3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

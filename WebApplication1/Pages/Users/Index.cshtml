@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication1.Pages.Users.IndexModel
+@{
+}
+
+<br>
+<h2>List of Users</h2>
+@if (HttpContext.Session.GetString("id") == "1")
+{
+    <a class='btn btn-primary btn-sm' href='/Users/Create'>New User</a>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Position</th>
+            <th>Units this Month</th>
+            <th>Units last Month</th>
+            <th>Platinum</th>
+            <th>Diamond</th>
+            <th>Gold</th>
+            <th>Silver</th>
+            <th>Won a Badge in the last 3 months?</th>
+            <th>Consecutive months with a 1000 units</th>
+            <th>1000 units a month last year</th>
+            <th>Leader</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listUsers)
+        {
+                    <tr>
+                        <th>@item.id</th>
+                        <th>@item.name</th>
+                        <th>@item.email</th>
+                        <th>@item.password</th>
+                        <th>@item.phone</th>
+                        <th>@item.address</th>
+                        <th>@item.position</th>
+                        <th>@item.units_this_month</th>
+                        <th>@item.units_last_month</th>
+                        <th>@item.platinum</th>
+                        <th>@item.diamond</th>
+                        <th>@item.gold</th>
+                        <th>@item.silver</th>
+                        <th>@item.badge_in_last_quarter</th>
+                        <th>@item.cons_units</th>
+                        <th>@item.units_year</th>
+                        <th>@item.leader</th>
+                @if (HttpContext.Session.GetString("id") == "1")
+                {
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@item.id">Edit</a>
+                                <a class="btn btn-primary btn-sm" href="/Users/Delete?id=@item.id">Delete</a>
+                        </td>
+                }
+                </tr>
+        }
+
+    </tbody>
+</table>

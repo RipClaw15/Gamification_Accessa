@@ -1,0 +1,40 @@
+﻿@page
+@model WebApplication1.Pages.Users.PrizesModel
+@{
+}
+
+<br>
+<h2>List of Prizes</h2>
+<a class='btn btn-primary btn-sm' href='/Users/Createprize'>New Prize</a>
+<table class="table">
+    <thead>
+        <tr>   
+            <th>Nr.</th>
+            <th>Name</th>
+            <th>Address</th>                  
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listPrize)
+        {
+                        <tr>
+                            <th>@item.id</th>
+                            <th>@item.name</th>                   
+                            <th>@item.address</th>                    
+                            <th>@item.description</th>
+                                <td>
+                                <a class="btn btn-primary btn-sm" href="/Users/Claim?id=@item.id">Claim</a>                               
+                            </td>
+                @if (HttpContext.Session.GetString("id") == "1")
+                {
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@item.id">Edit</a>
+                                    <a class="btn btn-primary btn-sm" href="/Users/Delete?id=@item.id">Delete</a>
+                            </td>
+                }
+                    </tr>
+        }
+
+    </tbody>
+</table>
